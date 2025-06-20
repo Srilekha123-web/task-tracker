@@ -1,45 +1,60 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
-  const [task, setTask] = useState("");
-  const [taskList, setTaskList] = useState([]);
+  const [tasks, setTasks] = useState([]);
+  const [title, setTitle] = useState("");
 
-  const handleAddTask = () => {
-    if (task.trim() === "") return;
+  // GET tasks from backend
+  useEffect(() => {
+    fetch("https://task-tracker-backend-wgax.onrender.com/api/tasks")
+      .then((res) => res.json())
+      .then((data) => setTasks(data))
+      .catch((err) => console.error("Error fetching tasks:", err));
+  }, []);
 
-    const newTask = {
-      id: Date.now(),
-      text: task,
-    };
-
-    setTaskList([...taskList, newTask]);
-    setTask(""); // Clear input
+  // POST new task
+  const addTask = () => {
+    if (!title.trim()) return;
+    fetch("https://task-tracker-backend-wgax.onrender.com/api/tasks", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ title }),
+    })
+      .then((res) => res.json())
+      .then((newTask) => {
+        setTasks([...tasks, newTask]);
+        setTitle("");
+      });
   };
 
-  const handleDeleteTask = (id) => {
-    const updatedList = taskList.filter((t) => t.id !== id);
-    setTaskList(updatedList);
+  // DELETE a task
+  const deleteTask = (id) => {
+    fetch(`https://task-tracker-backend-wgax.onrender.com/api/tasks/${id}`, {
+      method: "DELETE",
+    }).then(() => {
+      setTasks(tasks.filter((task) => task.id !== id));
+    });
   };
 
   return (
     <div className="App">
       <h1>📝 Task Tracker</h1>
-      <div>
-        <input
-          type="text"
-          value={task}
-          placeholder="Enter your task"
-          onChange={(e) => setTask(e.target.value)}
-        />
-        <button onClick={handleAddTask}>Add Task</button>
-      </div>
+      <input
+        type="text"
+        value={title}
+        placeholder="Enter a task"
+        onChange={(e) => setTitle(e.target.value)}
+      />
+      <button onClick={addTask}>Add Task</button>
 
       <ul>
-        {taskList.map((item) => (
-          <li key={item.id}>
-            {item.text}
-            <button onClick={() => handleDeleteTask(item.id)}>❌</button>
+        {tasks.map((task) => (
+          <li key={task.id}>
+            {task.title}{" "}
+            <button onClick={() => deleteTask(task.id)}>❌</button>
           </li>
         ))}
       </ul>
