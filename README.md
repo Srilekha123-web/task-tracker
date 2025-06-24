@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# 📌 Task Tracker Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack **Task Tracker** application built using the **MERN stack** (MongoDB, Express.js, React.js, Node.js). It allows users to **create, read, update, and delete (CRUD)** tasks with a clean UI and responsive design. Ideal for managing daily tasks efficiently.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Live Demo
 
-### `npm start`
+- **Frontend (Netlify):** [https://merry-tanuki-371cab.netlify.app/](https://merry-tanuki-371cab.netlify.app/)
+- **Backend (Render):** [https://task-tracker-backend-wgax.onrender.com/](https://task-tracker-backend-wgax.onrender.com/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠 Tech Stack
 
-### `npm test`
+- **Frontend:** React.js, CSS, Axios
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB (with Mongoose)
+- **Deployment:** Netlify (frontend), Render (backend)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ✅ Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Add new tasks
+- View task list
+- Mark tasks as completed
+- Delete tasks
+- Responsive and user-friendly interface
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📂 Folder Structure
 
-### `npm run eject`
+```
+client/     → React frontend  
+server/     → Node + Express backend
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📦 How to Run Locally
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 1. Clone the repo
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone https://github.com/Srilekha123-web/task-tracker.git
+cd task-tracker
+```
 
-## Learn More
+### 2. Start Backend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+cd server
+npm install
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Backend runs on: `http://localhost:5000`
 
-### Code Splitting
+### 3. Start Frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+cd client
+npm install
+npm start
+```
 
-### Analyzing the Bundle Size
+Frontend runs on: `http://localhost:3000`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 🌐 API Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+| Method | Endpoint               | Description         |
+|--------|------------------------|---------------------|
+| GET    | /api/tasks             | Fetch all tasks     |
+| POST   | /api/tasks             | Add new task        |
+| PUT    | /api/tasks/:id         | Update a task       |
+| DELETE | /api/tasks/:id         | Delete a task       |
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 👩‍💻 Author
 
-### Deployment
+**Mamindla Srilekha**  
+[GitHub Profile](https://github.com/Srilekha123-web)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 📸 Screenshots *(Optional)*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> You can add screenshots of your app UI here to showcase the look and feel.
+
+---
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
