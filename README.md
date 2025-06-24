@@ -88,9 +88,11 @@ Frontend runs on: `http://localhost:3000`
 
 ---
 
-## 📸 Screenshots *(Optional)*
+## 📸 Screenshots
 
-> You can add screenshots of your app UI here to showcase the look and feel.
+### 🖥️ Home Page
+![Home Page](https://github.com/user-attachments/assets/812e5b1c-e620-44ea-a212-679b291345e6)
+
 
 ---
 
